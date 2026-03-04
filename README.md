@@ -88,6 +88,15 @@ MIDIVisualizer is not generated with an Apple developer certificate, thus the wa
 - *I can't run MIDIVisualizer by double-clicking it in the file manager.*  
 This seems to be a limitation of the Nautilus file manager, you can either double-click the companion script, or create and register a .desktop file.
 
+## NEW COMPILATION
+configure: 
+
+cmake -G "MinGW Makefiles" -DCMAKE_EXE_LINKER_FLAGS="-lcomctl32 -lshlwapi" ..
+
+and build:
+
+mingw32-make -j2
+
 ## Compilation
 
 The project is configured using Cmake. You can use the Cmake GUI ('source directory' is the root of this project, 'build directory' is build/, press 'Configure' then 'Generate', selecting the proper generator for your target platform and IDE); or the command line version, specifying your target generator.

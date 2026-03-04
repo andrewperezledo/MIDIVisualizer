@@ -10,7 +10,9 @@
 
 #ifdef _WIN32
 #undef APIENTRY
+#ifndef NOMINMAX
 #define NOMINMAX
+#endif
 #include <windows.h>
 #include <shlobj.h>
 #else
@@ -25,9 +27,9 @@
 #ifdef _WIN32
 extern "C" {
 	// See https://gpuopen.com/learn/amdpowerxpressrequesthighperformance/
-	_declspec(dllexport) DWORD AmdPowerXpressRequestHighPerformance = 0x00000001;
+	__declspec(dllexport) DWORD AmdPowerXpressRequestHighPerformance = 0x00000001;
 	// See https://docs.nvidia.com/gameworks/content/technologies/desktop/optimus.htm
-	_declspec(dllexport) DWORD NvOptimusEnablement = 0x00000001;
+	__declspec(dllexport) DWORD NvOptimusEnablement = 0x00000001;
 }
 #endif
 
