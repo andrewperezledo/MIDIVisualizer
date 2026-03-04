@@ -2205,10 +2205,12 @@ void Viewer::keyPressed(int key, int action) {
 
 	if (action == GLFW_PRESS) {
 		if (key == GLFW_KEY_P) {
+			std::cout << "p_key" << std::endl;
 			_shouldPlay = !_shouldPlay;
 			_timerStart = DEBUG_SPEED * float(glfwGetTime()) - _timer;
 		}
 		else if (key == GLFW_KEY_R) {
+			std::cout << "r_key" << std::endl;
 			reset();
 		}
 		else if (key == GLFW_KEY_I) {
@@ -2218,6 +2220,7 @@ void Viewer::keyPressed(int key, int action) {
 			_showDebug = !_showDebug;
 		}
 		else if (key == GLFW_KEY_ESCAPE){
+			std::cout << "esc_key" << std::endl;
 			_shouldQuit = 1;
 		}
 	}
